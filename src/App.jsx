@@ -1,9 +1,21 @@
-import Counter from "./Counter";
+import "./App.css";
+import { useState } from "react";
 
-import './App.css'
+const App = () => {
+  console.log("render");
+  const [user, setUser] = useState({ name: "", age: 0 });
 
-function App() {
-  return <Counter/>;
-}
+  const updateUser = () => {
+    user.name = "Tom";
+    setUser(user);
+  };
 
-export default App
+  return (
+    <>
+      <h2>Name: {user.name}</h2>
+      <button onClick={updateUser}>Update User</button>
+    </>
+  );
+};
+
+export default App;
