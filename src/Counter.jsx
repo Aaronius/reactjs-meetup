@@ -6,8 +6,10 @@ const Counter = () => {
   const [subtractionCount, setSubtractionCount] = useState(0);
 
   const onClick = () => {
-    setAdditionCount(additionCount + 1);
-    setSubtractionCount(subtractionCount - 1);
+    fetch("https://jsonplaceholder.typicode.com/todos/1").then(() => {
+      setAdditionCount(additionCount + 1);
+      setSubtractionCount(subtractionCount - 1);
+    });
   };
 
   return (
