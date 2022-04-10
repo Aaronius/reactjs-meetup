@@ -6,7 +6,7 @@ const Counter = () => {
 
   const incrementAfterOneSecond = () => {
     setTimeout(() => {
-      setClickCount(clickCount + 1);
+      setClickCount(clickCount => clickCount + 1);
     }, 1000);
   };
 
