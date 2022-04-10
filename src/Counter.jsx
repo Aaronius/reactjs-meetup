@@ -4,10 +4,16 @@ const Counter = () => {
   console.log("render");
   const [clickCount, setClickCount] = useState(0);
 
+  const incrementAfterOneSecond = () => {
+    setTimeout(() => {
+      setClickCount(clickCount + 1);
+    }, 1000);
+  };
+
   return (
     <div className="counter">
       Click Count: {clickCount}
-      <button type="button" onClick={() => { setClickCount(clickCount + 1); }}>Increment</button>
+      <button type="button" onClick={incrementAfterOneSecond}>Increment</button>
     </div>
   );
 }
