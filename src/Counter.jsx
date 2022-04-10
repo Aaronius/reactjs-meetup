@@ -2,20 +2,23 @@ import { useState } from "react";
 
 const Counter = () => {
   console.log("render");
-  const [clickCount, setClickCount] = useState(0);
+  const [additionCount, setAdditionCount] = useState(0);
+  const [subtractionCount, setSubtractionCount] = useState(0);
 
-  const incrementAfterOneSecond = () => {
-    setTimeout(() => {
-      setClickCount(clickCount + 1);
-    }, 1000);
+  const onClick = () => {
+    setAdditionCount(additionCount + 1);
+    setSubtractionCount(subtractionCount - 1);
   };
 
   return (
     <div className="counter">
-      Click Count: {clickCount}
-      <button type="button" onClick={incrementAfterOneSecond}>Increment</button>
+      <div>Addition Count: {additionCount}</div>
+      <div>Subtraction Count: {subtractionCount}</div>
+      <button type="button" onClick={onClick}>
+        Add and subtract
+      </button>
     </div>
   );
-}
+};
 
 export default Counter;
