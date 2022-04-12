@@ -1,9 +1,16 @@
 import Counter from "./Counter";
 
-import './App.css'
+import "./App.css";
+import { useState } from "react";
 
 function App() {
-  return <Counter/>;
+  const [showCounter, setShowCounter] = useState(true);
+  return (
+    <>
+      { showCounter && <Counter /> }
+      <button onClick={() => setShowCounter(false)}>Hide Counter</button>
+    </>
+  );
 }
 
-export default App
+export default App;
